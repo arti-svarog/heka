@@ -195,7 +195,7 @@ nav.navbar{padding:1rem;}
 }
 .arrow_box:before {
     border-color: rgba(0, 0, 0, 0);
-    border-left-color: #;
+    /*border-left-color: #;*/
     border-width: 96px;
     margin-top: -96px;
 }
