@@ -1,0 +1,137 @@
+<body>
+	<div class="main-div">	
+		<header>
+			<%= @data %>
+			<div class="container">
+				<div class="row">
+					<% if session[:transaction]["error"].present? %>
+						<%= render template: "home/error-page" %>
+					<% else %>
+						<div class="col-sm-6 col-md-12">
+							<div class="exchange-main">							
+								<div class="depost-ex order-dp">
+									<div class="instate-ex">
+										<div class="left-part">Order ID:
+											<span><%= session[:transaction]["success"]["orderId"] %>
+											</span>
+										</div>
+										<!-- <div class="right-part"> 
+											<a href="#" class="arrow_box" role="button" data-toggle="modal" data-target="#mybookmark"><span>Bookmark</span></a>
+										</div> -->
+										<div id="mybookmark" class="modal fade mybookmark" role="dialog">
+										  <div class="modal-dialog">
+												<!-- Modal content-->
+												<div class="modal-content">
+												  <div class="modal-header">
+														<h4 class="modal-title">Bookmark This Page</h4>
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+												  </div>
+												  <div class="modal-body">
+														<p>To bookmark this page press CMD+D, or you can copy the link from below. You can always come back to this link later to check your status.</p>
+														<div class="row form-group">
+															<div class="col-md-12 col-sm-12">
+																<div class="input-group copy-dp">
+																	<input type="text" class="form-control">
+																	<span class="input-group-addon success"><i class="fas fa-file-alt"></i></span>
+																</div>
+															</div>
+														</div>
+												  </div>
+												</div>
+										  </div>
+										</div>
+									</div>
+									<div class="qrcode-dp">
+										<div class="row">
+											<div class="col-md-4 col-sm-12">
+    								<%= image_tag @qr  ,class: "qr" %>
+											</div>
+											<div class="col-md-8 col-sm-12">
+												<div class="qrdis-dp">
+													<h5>Send to this address</h5>
+													<div class="qr-view"><%= session[:transaction]["success"]["deposit"]%></div>
+													<div class="qr-view">Send up to this amount: <%= session[:transaction]["success"]["maxLimit"] %> 
+													<%= image_tag(session[:second_logo],width: 20,height: 20)%> <%= session[:second_currency] %>
+													</div>
+													<div class="qr-view">Send AT LEAST this amount: <%= session[:transaction]["success"]["quotedRate"] %> 
+													<%= image_tag(session[:second_logo],width: 20,height: 20)%>
+													 <%= session[:second_currency] %>
+													</div>
+													<div class="qr-view last">Rec. Miner Fee (fast processing):<span>  <%= session[:transaction]["success"]["minerFee"]%> <%= session[:second_currency] %> </span></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="dis-ex awaitint-dp">
+										<div class="row">
+											<div class="col-sm-12 col-md-4">
+												<div class="dev-grp active">
+													<div class="view-ex depview-ex">
+														<i class="fa fa-hourglass-start"></i>
+													</div>
+													<div class="view-ex"><h6>Awaiting Deposit</h6></div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-md-4 abline-ex">
+												<div class="dev-grp">
+													<div class="view-ex depview-ex">
+														<i class="fas fa-exchange-alt"></i>
+													</div>
+													<div class="view-ex"><h6>Awaiting Exchange</h6></div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-md-4">
+												<div class="dev-grp last">
+													<div class="view-ex depview-ex">
+														<i class="fa fa-check"></i>
+													</div>					
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-11 col-sm-12">
+												<div class="progress">
+												  <div data-percentage="0%" style="width: 60%;" class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="formdis-dp">
+										<h3>Order Details</h3>
+										<div class="row">
+											<div class="col-md-7 col-sm-12">
+												<div class="orderciew-dp">
+													<%= image_tag(session[:second_logo],width: 20,height: 20)%> <%= session[:second_currency] %> Deposit 
+													<span class="pull-right">Send up to <%= session[:transaction]["success"]["depositAmount"] %></span>
+												</div>
+												<div class="orderciew-dp">
+													<p><%= session[:transaction]["success"]["deposit"] %></p>
+												</div>
+												<div class="orderciew-dp">
+													<%= image_tag(session[:first_logo],width: 20,height: 20)%> <%= session[:first_currency] %> Receive
+													<span class="pull-right">Send up to <%= session[:transaction]["success"]["withdrawalAmount"] %></span>
+												</div>
+												<div class="orderciew-dp">
+													<p><%= session[:transaction]["success"]["returnAddress"] %></p>
+												</div>
+												<div class="orderciew-dp">
+													<h5>Current Rate</h5>
+
+													<p>1 <%= session[:first_currency] %> = <span class="datas-dp"><%= @amount %> <%= session[:second_currency] %></span></p>
+												</div>
+												<!-- <div class="orderciew-dp">
+													<h5>Type</h5>
+													<p>Quick</p>
+												</div> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</header>
+	</div>
+</body>

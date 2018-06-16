@@ -1,0 +1,27 @@
+
+@media only screen and (max-width: 768px) {
+.form-group-shadow.transparent{margin:0;}	
+.chooseblk-hder .firstchoose-03 .form-group-exchange{margin:20px 0 0 0;}
+.list-icondata{ width:285px;  overflow-x: auto;  white-space: nowrap;}
+.list-icondata .datalist-s{width:auto;}
+.featured-block{text-align:center;}
+.featured-block .content-block{margin:10px 0;}
+.featured-block .content-block h4{margin:10px 0;}
+.group-sign-btn{width:100%;}
+.div-social-buttons{width:100%; text-align: center;}
+.firstchoose-01, .joinfeww-s h4{font-size:3em;}
+.form-group-signup label{width:100%; text-align: center;}
+.group-sign-btn .form-group-signup .link-why {text-align:center; clear:left; margin:10px 0; float:none; width:100%;
+display: block;}
+.footerblk-data{margin:0 0 30px 0;}
+.copyright-s p{font-size:12px;}
+.copyright-s .footer-social{text-align:center; margin:10px 0 0 0;}
+.joinfeww-s p{font-size:1em;}
+.joinfeww-s{margin: 0 0 3em 0;}
+}
+@media (min-width: 992px) {
+  body {
+   
+  }
+}
+

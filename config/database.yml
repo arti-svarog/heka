@@ -1,0 +1,21 @@
+development:
+defaults: &defaults
+  adapter: postgresql
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+  pool: 10
+  timeout: 5000
+
+development:
+  database: heka_development
+  <<: *defaults
+
+test:
+  database: heka_test
+  <<: *defaults
+
+production:
+  database: heka_production
+  <<: *defaults

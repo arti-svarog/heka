@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dy0ptagts
+  api_key: '299241572834124'
+  api_secret: 4UZDxfcdJ_lK9ajL8TcbdqTVs9A
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dy0ptagts
+  api_key: '299241572834124'
+  api_secret: 4UZDxfcdJ_lK9ajL8TcbdqTVs9A
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dy0ptagts
+  api_key: '299241572834124'
+  api_secret: 4UZDxfcdJ_lK9ajL8TcbdqTVs9A
+  enhance_image_tag: true
+  static_image_support: false

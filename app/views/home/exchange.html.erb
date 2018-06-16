@@ -1,0 +1,694 @@
+<body>
+	<div class="main-div">	
+		<nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+	  	<div class="container">
+				<a class="navbar-brand" href="/"><img src="/assets/logoh.png"/></a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</nav>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-md-12">
+						<div class="exchange-main">							
+							<div class="depost-ex">
+								<div class="instate-ex">
+									<%#= params %>
+									<div class="left-part">Instant Rate <span> <%= session[:quantity] = params[:quantity] %> <%= params[:first] %></span>
+									</div>
+									<div class="right-part">= <span><%= params[:total] %> <%= params[:second] %></span>
+									</div>
+								</div>
+								<div class="dis-ex">
+									<div class="row">
+										<div class="col-sm-12 col-md-4">
+											<div class="dev-grp">
+												<div class="view-ex depview-ex">Deposit Min</div>
+												<div class="view-ex"><%= @exchange_value["minimum"] %> <%= @first_currency %></div>
+											</div>
+										</div>
+										<div class="col-sm-12 col-md-4 abline-ex">
+											<div class="dev-grp">
+												<div class="view-ex depview-ex">Deposit Max</div>
+												<div class="view-ex"><%= @exchange_value["maxLimit"] %> <%= @first_currency %></div>
+											</div>
+										</div>
+										<div class="col-sm-12 col-md-4">
+											<div class="dev-grp">
+												<div class="view-ex depview-ex">Miner Fee</div>
+												<div class="view-ex"><%= @exchange_value["minerFee"] %> <%= @second_currency %></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="coin-ex">
+								<span class="view-coin">
+									<!-- <a href="#" data-toggle="modal" data-target="#buyCoin"> -->
+										<%= image_tag(@first_currency_icon.logo.url,width: 35,height: 35)%>
+									<!-- </a> -->
+								</span>
+								<span class="view-coin arwright-ex">
+									<a href="#"><i class="fa fa-arrow-right"></i></a>
+								</span>
+								<span class="view-coin">
+									<!-- <a href="#" data-toggle="modal" data-target="#sellCoin"> -->
+										<%= image_tag(@second_currency_icon.logo.url,width: 35,height: 35)%></a>
+								</span>
+								<div id="buyCoin" class="modal fade buyCoin" role="dialog">
+								  <div class="modal-dialog">
+										<!-- Modal content-->
+										<div class="modal-content">
+										  <div class="modal-body">
+													<div class="coinbs-ex">
+														<ul>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc BTC" title="BTC"></i>
+																	</span>
+																	<span class="right-dis">BTC</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc ETH" title="ETH"></i>
+																	</span>
+																	<span class="right-dis">ETH</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc XRP" title="XRP"></i>
+																	</span>
+																	<span class="right-dis">XRP</span>
+																</a>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc XRP" title="XRP"></i>
+																	</span>
+																	<span class="right-dis">XRP</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc BCN" title="BCN"></i>
+																	</span>
+																	<span class="right-dis">BCN</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc EOS" title="EOS"></i>
+																	</span>
+																	<span class="right-dis">EOS</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc LTC" title="LTC"></i>
+																	</span>
+																	<span class="right-dis">LTC</span>
+																</a>
+															</li>	
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc XMR" title="XMR"></i>
+																	</span>
+																	<span class="right-dis">XMR</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc DASH" title="DASH"></i>
+																	</span>
+																	<span class="right-dis">DASH</span>
+																</a>
+															</li>	
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc ETC" title="ETC"></i>
+																	</span>
+																	<span class="right-dis">ETC</span>
+																</a>
+															</li>	
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc QTUM" title="QTUM"></i>
+																	</span>
+																	<span class="right-dis">QTUM</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc ZEC" title="ZEC"></i>
+																	</span>
+																	<span class="right-dis">ZEC</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc OMG" title="OMG"></i>
+																	</span>
+																	<span class="right-dis">OMG</span>
+																</a>
+															</li>	
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc DCR" title="DCR"></i>
+																	</span>
+																	<span class="right-dis">DCR</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc REP-alt" title="REP"></i>
+																	</span>
+																	<span class="right-dis">REP</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc DOGE" title="DOGE"></i>
+																	</span>
+																	<span class="right-dis">DOGE</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc GNT" title="GNT"></i>
+																	</span>
+																	<span class="right-dis">GNT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc BAT" title="BAT"></i>
+																	</span>
+																	<span class="right-dis">BAT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc KMD" title="KMD"></i>
+																	</span>
+																	<span class="right-dis">KMD</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc NXT" title="NXT"></i>
+																	</span>
+																	<span class="right-dis">NXT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc SALT" title="SALT"></i>
+																	</span>
+																	<span class="right-dis">SALT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc GNO" title="GNO"></i>
+																	</span>
+																	<span class="right-dis">GNO</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc LBC" title="LBC"></i>
+																	</span>
+																	<span class="right-dis">LBC</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc POT" title="POT"></i>
+																	</span>
+																	<span class="right-dis">POT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc CLAM" title="CLAM"></i>
+																	</span>
+																	<span class="right-dis">CLAM</span>
+																</a>
+															</li>								
+														</ul>
+													</div>
+										  </div>							
+										</div>
+								  </div>
+								</div>								
+								<div id="sellCoin" class="modal fade buyCoin" role="dialog">
+								  <div class="modal-dialog">
+										<!-- Modal content-->
+											<div class="modal-content">
+									  	<div class="modal-body">
+													<div class="coinbs-ex">
+														<ul>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc BTC" title="BTC"></i>
+																	</span>
+																	<span class="right-dis">BTC</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc ETH" title="ETH"></i>
+																	</span>
+																	<span class="right-dis">ETH</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc XRP" title="XRP"></i>
+																	</span>
+																	<span class="right-dis">XRP</span>
+																</a>
+															</li>												
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc XRP" title="XRP"></i>
+																	</span>
+																	<span class="right-dis">XRP</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc BCN" title="BCN"></i>
+																	</span>
+																	<span class="right-dis">BCN</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc EOS" title="EOS"></i>
+																	</span>
+																	<span class="right-dis">EOS</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc LTC" title="LTC"></i>
+																	</span>
+																	<span class="right-dis">LTC</span>
+																</a>
+															</li>	
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc XMR" title="XMR"></i>
+																	</span>
+																	<span class="right-dis">XMR</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc DASH" title="DASH"></i>
+																	</span>
+																	<span class="right-dis">DASH</span>
+																</a>
+															</li>	
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc ETC" title="ETC"></i>
+																	</span>
+																	<span class="right-dis">ETC</span>
+																</a>
+															</li>	
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc QTUM" title="QTUM"></i>
+																	</span>
+																	<span class="right-dis">QTUM</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc ZEC" title="ZEC"></i>
+																	</span>
+																	<span class="right-dis">ZEC</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc OMG" title="OMG"></i>
+																	</span>
+																	<span class="right-dis">OMG</span>
+																</a>
+															</li>	
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc DCR" title="DCR"></i>
+																	</span>
+																	<span class="right-dis">DCR</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc REP-alt" title="REP"></i>
+																	</span>
+																	<span class="right-dis">REP</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc DOGE" title="DOGE"></i>
+																	</span>
+																	<span class="right-dis">DOGE</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc GNT" title="GNT"></i>
+																	</span>
+																	<span class="right-dis">GNT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc BAT" title="BAT"></i>
+																	</span>
+																	<span class="right-dis">BAT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc KMD" title="KMD"></i>
+																	</span>
+																	<span class="right-dis">KMD</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc NXT" title="NXT"></i>
+																	</span>
+																	<span class="right-dis">NXT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc SALT" title="SALT"></i>
+																	</span>
+																	<span class="right-dis">SALT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc GNO" title="GNO"></i>
+																	</span>
+																	<span class="right-dis">GNO</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc LBC" title="LBC"></i>
+																	</span>
+																	<span class="right-dis">LBC</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc POT" title="POT"></i>
+																	</span>
+																	<span class="right-dis">POT</span>
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<span class="left-icon">
+																		<i class="cc CLAM" title="CLAM"></i>
+																	</span>
+																	<span class="right-dis">CLAM</span>
+																</a>
+															</li>								
+														</ul>
+													</div>
+									  	</div>							
+											</div>
+								  </div>
+								</div>
+							</div>
+							<div class="form-ex">
+								<%= form_for :currency, url: exchange_order_home_index_url ,method: :post do |f| %>
+									
+									<!-- <input type="hidden" id="signup_pass_confirm" name="signup[pass_confirm]" value="#{@signup.pass_confirm}" /> -->
+
+
+							  <div class="form-group">
+									<input type="text" class="form-control" placeholder="Your <%= params[:second] %> Withdrawal Address" name="currency[withdrawal_address]">
+						  	</div>
+							  <div class="form-group">
+							 		<input type="text" class="form-control" placeholder="Your <%= params[:first] %> Refund Address" name="currency[refundalbe_address]" value = '<%= @reusable_address.try(:address) %>' >
+						  	</div>
+								<div class="form-group">	
+								  <div class="checkbox">
+											<label>
+												<input type="checkbox" name="currency[terms]">
+												<span>I agree to the Terms and certify that I am the beneficial owner of the input assets and the destination address.</span>
+											</label>
+								  </div>
+								  <div class="togal-ex">
+										<span class="reus-ex">Reusable Address?</span> 
+										<label class="switch">
+									  <% if @reusable_address.try(:address).present? %>
+									 		<input type="checkbox" name= "currency[resuable_address]" checked="checked" >
+									 	<% else %>
+									 		<input type="checkbox" name= "currency[resuable_address]" >
+									 	<% end %>
+									  <span class="slider round"></span>
+										</label>
+							  	</div>
+						  	</div>
+								<div class="form-group form-group-exchange pull-right">
+									<%= f.submit "Start 	Transaction" ,class: "arrow_box btn btn-block" %>
+								</div>
+								<% end %>
+							</div> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<div class="list-icondata">
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-red">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									BTC
+								</div>
+								<div class="btc-amt">
+									$9,168.3000
+								</div>
+								<div class="btc-per color-red">
+									-0.52%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-red">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									ETH
+								</div>
+								<div class="btc-amt">
+									$670.5500
+								</div>
+								<div class="btc-per color-green">
+									2.21%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-red">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									XRP
+								</div>
+								<div class="btc-amt">
+									$0.8275
+								</div>
+								<div class="btc-per color-red">
+									-0.56%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-red">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									BTH
+								</div>
+								<div class="btc-amt">
+									$1,371.6479
+								</div>
+								<div class="btc-per color-red">
+									-0.7%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-green">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									EOS
+								</div>
+								<div class="btc-amt">
+									$18,0800
+								</div>
+								<div class="btc-per color-green">
+									19.87%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-red">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									LTC
+								</div>
+								<div class="btc-amt">
+									$148.5900
+								</div>
+								<div class="btc-per color-red">
+									-0.62%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-red">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									XMR
+								</div>
+								<div class="btc-amt">
+									$256.5300
+								</div>
+								<div class="btc-per color-red">
+									-2.34%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-red">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									DASH
+								</div>
+								<div class="btc-amt">
+									$484.1475
+								</div>
+								<div class="btc-per color-red">
+									-1.44%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-green">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									ETC
+								</div>
+								<div class="btc-amt">
+									$21.4500
+								</div>
+								<div class="btc-per color-green">
+									23%
+								</div>
+							</a>
+						</div>
+						<div class="datalist-s">
+							<a>
+								<div class="data-dots color-red">
+									<i class="fas fa-circle"></i>
+								</div>
+								<div class="btc-hdr">
+									OMG
+								</div>
+								<div class="btc-amt">
+									$17.8878
+								</div>
+								<div class="btc-per color-red">
+									-3.56%%
+								</div>
+							</a>
+						</div>
+						</div>
+					</div>						
+				</div>	
+			</div>
+		</header>
+	</div>
+</body>

@@ -1,0 +1,310 @@
+<body>
+	<div class="main-div">
+		<%= render 'common/subheader' %>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-md-12">
+						<div class="chooseblk-hder">
+							<div class="firstchoose-01">
+								Exchange cryptocurrency<br/>
+								at the <span>best rate</span>
+							</div>
+							<div class="firstchoose-02">
+								<p>Transfer from one wallet to another within seconds. It's that simple.</p>
+							</div>
+							<div class="firstchoose-03">
+								<form class="form-inline form-exchange">
+									<div class="form-group form-group-shadow">
+										<div class="input-group input-group-currency">
+											<div class="input-group-addon uppercase">
+												<span>You have</span>
+											</div>
+											<input class="form-control" name="amount" value="1" autocomplete="off" type="text" id="amount">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-default dropdown-toggle uppercase dropdown-toggle-big">
+												<b id="first_currency">BTC</b>
+												<span class="glyphicon menu-down"></span>
+												</button>
+											</div>
+											<div class="form-group form-group-change">
+												<div class="data01">
+													 <div id="custom-search-input">
+														<div class="input-group col-md-12">
+															<input type="text" class="form-control input-lg" placeholder="Search" />
+															<span class="input-group-btn">
+																<button class="btn btn-info btn-lg" type="button">
+																	<i class="fa fa-search" aria-hidden="true"></i>
+																</button>
+															</span>
+														</div>
+														<div class="view-data-values view-data-first">
+													 <% @currency.each do |cur| %>
+														<a id="<%= cur.id  %>">
+																<span class="dat-view"><%= cur.abbr %></span>
+																<span class="dat-view-icon">
+																	<%= image_tag(cur.logo.url,width: 20,height: 20)%>
+																<!-- <i class="fab fa-bitcoin"></i> -->
+																</span>
+																<span class="dat-view-text"><%= cur.name %></span>
+															</a>
+													<% end %>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group into equals-s">
+										<img src="/assets/equals.png"/>
+									</div>
+									<div class="form-group form-group-shadow dest-cc input-bg-transparent transparent">
+										<div class="input-group input-group-currency">
+											<div class="input-group-addon uppercase1">
+												<span>You get</span>
+											</div>
+											<input readonly="" value="13.501155" class="form-control light" type="text" id="second_cur">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-default dropdown-toggle uppercase1 dropdown-toggle-big">
+													<b id="second_currency">ETH</b>
+													<span class="glyphicon menu-down"></span>
+												</button>
+											</div>
+											<div class="form-group form-group-change1">
+												<div class="data01">
+													 <div id="custom-search-input">
+														<div class="input-group col-md-12">
+															<input type="text" class="form-control input-lg" placeholder="Search" />
+															<span class="input-group-btn">
+																<button class="btn btn-info btn-lg" type="button">
+																	<i class="fa fa-search" aria-hidden="true"></i>
+																</button>
+															</span>
+														</div>
+														<div class="view-data-values view-data-second">
+															<% @currency.each do |cur| %>
+														<a id="<%= cur.id %>">
+																<span class="dat-view"><%= cur.abbr %></span>
+																<span class="dat-view-icon">
+																	<%= image_tag(cur.logo.url,width: 20,height: 20)%>
+																<!-- <i class="fab fa-bitcoin"></i> -->
+																</span>
+																<span class="dat-view-text"><%= cur.name %></span>
+															</a>
+													<% end %>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group form-group-exchange pull-right">
+										<a id="exchange-page" class="arrow_box" role="button"><span>EXCHANGE</span></a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<div class="list-icondata">
+							<% @top_10_ticker_price.each do |cur| %>
+							<div class="datalist-s">
+								<a>
+									<div class="data-dots color-red">
+										<i class="fas fa-circle"></i>
+									</div>
+									<div class="btc-hdr">
+										<%= cur.first %>
+									</div>
+									<div class="btc-amt">
+										<%= "$ #{cur[1][0].round(2)}"  %>
+									</div>
+									<div class="btc-per color-red">
+										<%= "#{cur[1][1].round(2)} %"  %> 
+									</div>
+								</a>
+							</div>
+							<% end %>
+						</div>
+					</div>						
+				</div>
+			</div>
+		</header>
+	</div>
+	<div class="featured-block"> 
+		<div class="container"> 
+			<div class="row"> 
+				<div class="col-md-4 content-block"> 				
+					<div class="row"> 
+						<div class="col-md-4 icon-block"> 
+							<img src="/assets/01.png"> 
+						</div> 
+							<div class="col-md-8"> 
+								<h4>SIMPLE </h4> 
+								<p>Choose your desired altcoins or blockchain tokens you would like to exchange, input your receiving address, &amp; send your funds. Fast crypto market exchanges, no fees, and a delightful process.</p> 
+							</div> 
+					</div> 
+				</div> 
+				<div class="col-md-4 content-block"> 
+					<div class="row"> 
+						<div class="col-md-4 icon-block"> 
+							<img src="/assets/02.png"> 
+						</div> 
+						<div class="col-md-8"> 
+							<h4>SECURE</h4> 
+							<p>Unlike other digital asset and bitcoin exchanges, you don’t need an account to use HEKA. This means your funds and information don’t suffer a custodial risk and loss.</p> 
+						</div> 
+					</div> 
+				</div> 
+				<div class="col-md-4 content-block"> 
+					<div class="row"> 
+						<div class="col-md-4 icon-block">
+							<img src="/assets/03.png"> 
+						</div> 
+						<div class="col-md-8"> 
+							<h4>COMPETITIVE</h4> 
+							<p>We offer competitive altcoin and btc exchange rates that update in real time, with no fees on top. Our liquidity and expertise in cryptocurrency trading continually improve.</p> 
+						</div> 
+					</div> 
+				</div> 
+			</div> 
+		</div> 
+	</div>
+	<% unless current_user %>
+		<div class="joinfree">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<div class="joinfeww-s">
+							<h4>Join for free</h4>
+							<p>to exchange crypto instantly now</p>
+						</div>
+					</div>
+				</div>
+				 <div class="row">
+					<div class="col-sm-12 col-md-5">
+						<div class="group-sign-btn">
+							<div class="form-group form-group-signup">
+								<label class="">
+									<span>Enter your email address</span>
+								</label>
+								<a href="#" class="link-why pull-right color-cyengray">Why should I leave my e-mail?</a>
+								<input class="form-control" type="email"><span class="error red"></span>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-green btn-block btn-submit"><span>Continuing signing up</span></button>
+							</div>
+							<div class="form-group">
+								<div class="secruity-blk">
+									<div class="view-row sec-lock">
+										<label><img src="/assets/lock.png"/></label>
+										<span>Track record <br/>proved security</span>
+									</div>
+									<div class="view-row sec-sbl">
+										<label><img src="/assets/sbl.png"/></label>
+										<span>Track record <br/>proved security</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<div class="div-social-buttons">				
+							<div>
+								<a href="/users/auth/google_oauth2" class="btn btn-success btn-lg btn-social btn-google">
+									<i class="fab fa-google-plus-g"></i> Sign up with Google +
+								</a>
+							</div>
+							<div>
+								<a href="#" class="btn btn-success btn-lg btn-social btn-facebook">
+									<i class="fab fa-facebook-f"></i> Sign up with Facebook
+								</a>
+							</div>
+							<div>
+								<!-- <a href="/users/auth/twitter" class="btn btn-success btn-lg btn-social btn-twitter">
+									<i class="fab fa-twitter"></i> Sign up with Twitter
+								</a> -->
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</body>
+
+<script type="text/javascript">
+	// Start input field vaue change
+	$("#amount").keyup(function()
+	{
+		var	currency1 = $("#first_currency").html();
+		var	currency2 = $("#second_currency").html();
+		var amount = this.value;
+
+		$(".form-group-change").hide();
+		$.ajax({
+	  url: "http://localhost:3000/home/currency_exchange",
+	  type: "GET",
+	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
+	  dataType: "script",
+	  success:function(data){
+		  {
+			$('.light').val(JSON.parse(data).data);
+		 }
+	   }
+		});
+
+
+	});
+	// End 
+	// Start First Dropdown
+	$(".view-data-first a").click(function(){
+	$("#first_currency").html($('span:first', this).text());
+	var	currency1 = $("#first_currency").html();
+	var	currency2 = $("#second_currency").html();
+	var amount = $("#amount").val();
+	$(".form-group-change").hide();
+		$.ajax({
+	  url: "http://localhost:3000/home/currency_exchange",
+	  type: "GET",
+	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
+	  dataType: "script",
+	  success:function(data){
+	{
+		$('.light').val(JSON.parse(data).data);
+	}
+	  }
+		});
+	});
+		// End
+	// Start Second Dropdown
+	$(".view-data-second a").click(function(){
+	$("#second_currency").html($('span:first', this).text());
+	var	currency1 = $("#first_currency").html();
+	var	currency2 = $("#second_currency").html();
+	var amount = $("#amount").val();
+	$(".form-group-change1").hide();
+		$.ajax({
+	  url: "http://localhost:3000/home/currency_exchange",
+	  type: "GET",
+	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
+	  dataType: "script",
+	  success:function(data){
+	{
+		$('.light').val(JSON.parse(data).data);
+	}
+	  }
+		});
+	});
+		// End
+	$('#exchange-page').click(function() {
+		var quantity = $("#amount").val();
+		var total = $("#second_cur").val();
+		var	currency1 = $("#first_currency").html();
+		var	currency2 = $("#second_currency").html();
+  window.location.href = "/home/exchange?first="+currency1+"&&second="+currency2+"&quantity="+quantity+"&total="+total;
+  return false;
+	});
+</script>
