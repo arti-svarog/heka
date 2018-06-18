@@ -23,8 +23,6 @@ class HomeController < ApplicationController
     data = params["params"]["quantity"].to_i * exchange_rate["rate"].to_f
     if exchange_rate["error"].present?
       flash[:alert] =  exchange_rate["error"]
-    else
-      flash[:alert] =   'You are not an authenticated user.Please login first.'
     end
     render :json => {:data => data}
   end

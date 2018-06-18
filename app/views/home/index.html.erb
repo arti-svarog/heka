@@ -56,7 +56,7 @@
 										</div>
 									</div>
 									<div class="form-group into equals-s">
-										<img src="/assets/equals.png"/>
+										<img src="/assets/equals.png" id="exchange_image" />
 									</div>
 									<div class="form-group form-group-shadow dest-cc input-bg-transparent transparent">
 										<div class="input-group input-group-currency">
@@ -234,77 +234,3 @@
 		</div>
 	<% end %>
 </body>
-
-<script type="text/javascript">
-	// Start input field vaue change
-	$("#amount").keyup(function()
-	{
-		var	currency1 = $("#first_currency").html();
-		var	currency2 = $("#second_currency").html();
-		var amount = this.value;
-
-		$(".form-group-change").hide();
-		$.ajax({
-	  url: "/home/currency_exchange",
-	  type: "GET",
-	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
-	  dataType: "script",
-	  success:function(data){
-		  {
-			$('.light').val(JSON.parse(data).data);
-		 }
-	   }
-		});
-
-
-	});
-	// End 
-	// Start First Dropdown
-	$(".view-data-first a").click(function(){
-	$("#first_currency").html($('span:first', this).text());
-	var	currency1 = $("#first_currency").html();
-	var	currency2 = $("#second_currency").html();
-	var amount = $("#amount").val();
-	$(".form-group-change").hide();
-		$.ajax({
-	  url: "/home/currency_exchange",
-	  type: "GET",
-	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
-	  dataType: "script",
-	  success:function(data){
-	{
-		$('.light').val(JSON.parse(data).data);
-	}
-	  }
-		});
-	});
-		// End
-	// Start Second Dropdown
-	$(".view-data-second a").click(function(){
-	$("#second_currency").html($('span:first', this).text());
-	var	currency1 = $("#first_currency").html();
-	var	currency2 = $("#second_currency").html();
-	var amount = $("#amount").val();
-	$(".form-group-change1").hide();
-		$.ajax({
-	  url: "/home/currency_exchange",
-	  type: "GET",
-	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
-	  dataType: "script",
-	  success:function(data){
-	{
-		$('.light').val(JSON.parse(data).data);
-	}
-	  }
-		});
-	});
-		// End
-	$('#exchange-page').click(function() {
-		var quantity = $("#amount").val();
-		var total = $("#second_cur").val();
-		var	currency1 = $("#first_currency").html();
-		var	currency2 = $("#second_currency").html();
-  window.location.href = "/home/exchange?first="+currency1+"&&second="+currency2+"&quantity="+quantity+"&total="+total;
-  return false;
-	});
-</script>

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable
+         :omniauthable, :confirmable
 
   def self.from_omniauth(auth)  
     user = self.find_by(email: auth.info.email)
@@ -18,4 +18,10 @@ class User < ApplicationRecord
       user
     end
   end
+
+  # after_create :send_confirmation_mail
+  # def send_confirmation_mail
+  #   UserMailer.send_confirmation_mail(self).deliver
+  # end
+
 end
