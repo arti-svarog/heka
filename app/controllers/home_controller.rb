@@ -18,12 +18,17 @@ class HomeController < ApplicationController
   end
 
   def currency_exchange
+    binding.pry
     exchange_rate = HTTParty.get("https://shapeshift.io/rate/#{params["params"]["first"].downcase}_#{params["params"]["second"].downcase}")
+    puts "-----------"
+    puts exchange_rate
     #get secret key from binance account
-    key = 'Cwnm3okYuEFvuxyx5CoJZEll7D5k9PKvVKab6PS6lu5bDhyD3N2BXy5tpAa4Kh5V'
-    data = 'symbol=LTCBTC&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&newClientOrderId=oorder&recvWindow=10000000&timestamp=1529039100000'
-    digest = OpenSSL::Digest.new('sha256')
-    hmac = OpenSSL::HMAC.digest(digest, key, data)
+    # key = 'Cwnm3okYuEFvuxyx5CoJZEll7D5k9PKvVKab6PS6lu5bDhyD3N2BXy5tpAa4Kh5V'
+    # data = 'symbol=LTCBTC&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&newClientOrderId=oorder&recvWindow=10000000&timestamp=1529039100000'
+    # digest = OpenSSL::Digest.new('sha256')
+    puts '++++++++++++++'
+    # hmac = OpenSSL::HMAC.digest(digest, key, data)
+    puts params["params"]["quantity"]
     data = params["params"]["quantity"].to_i * exchange_rate["rate"].to_f
     render :json => {:data => data}
   end
