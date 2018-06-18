@@ -1,7 +1,7 @@
 require 'json'
 require 'rqrcode_png'
 class HomeController < ApplicationController
-  before_action :authenticate_user, :except => [:index,:coming_soon]
+  before_action :authenticate_user, :except => [:currency_exchange,:index,:coming_soon]
 
   def index 
   	@currency = Currency.all
@@ -18,18 +18,14 @@ class HomeController < ApplicationController
   end
 
   def currency_exchange
-    binding.pry
     exchange_rate = HTTParty.get("https://shapeshift.io/rate/#{params["params"]["first"].downcase}_#{params["params"]["second"].downcase}")
-    puts "-----------"
-    puts exchange_rate
-    #get secret key from binance account
-    # key = 'Cwnm3okYuEFvuxyx5CoJZEll7D5k9PKvVKab6PS6lu5bDhyD3N2BXy5tpAa4Kh5V'
-    # data = 'symbol=LTCBTC&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1&newClientOrderId=oorder&recvWindow=10000000&timestamp=1529039100000'
-    # digest = OpenSSL::Digest.new('sha256')
-    puts '++++++++++++++'
-    # hmac = OpenSSL::HMAC.digest(digest, key, data)
     puts params["params"]["quantity"]
     data = params["params"]["quantity"].to_i * exchange_rate["rate"].to_f
+    if exchange_rate["error"].present?
+      flash[:alert] =  exchange_rate["error"]
+    else
+      flash[:alert] =   'You are not an authenticated user.Please login first.'
+    end
     render :json => {:data => data}
   end
 
@@ -71,7 +67,11 @@ class HomeController < ApplicationController
     order = order.split("\r\n\r\n").last
     @data = JSON.parse(order)
     session[:transaction] = @data
-    redirect_to order_booking_home_index_url
+    if  @data["error"].present? 
+      redirect_to order_booking_home_index_url , alert: @data["error"]
+    else
+      redirect_to order_booking_home_index_url
+    end
   end
   
 end
