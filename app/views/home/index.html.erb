@@ -43,7 +43,7 @@
 														<a id="<%= cur.id  %>">
 																<span class="dat-view"><%= cur.abbr %></span>
 																<span class="dat-view-icon">
-																	<%= image_tag(cur.logo.url,width: 20,height: 20)%>
+																	<%= image_tag(cur.logo.url,width: 20,height: 20  , :secure => true)  	%>
 																<!-- <i class="fab fa-bitcoin"></i> -->
 																</span>
 																<span class="dat-view-text"><%= cur.name %></span>
