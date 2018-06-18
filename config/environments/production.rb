@@ -88,7 +88,6 @@ Rails.application.configure do
 
  # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.active_record.dump_schema_after_migration = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.default_url_options = { :host => 'https://heka-app.herokuapp.com' }
@@ -97,9 +96,10 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     port: 587, 
     domain: 'gmail.com', 
-    user_name: '09artirajora@gmail.com',
-    password: 'artiyatin',
-    authentication: 'plain'
+    user_name: 'sujit.svarogt@gmail.com',
+    password: 'sujit@123',
+    authentication: 'plain', 
+    enable_starttls_auto: true 
   }
 
   config.action_mailer.asset_host = 'https://heka-app.herokuapp.com'
