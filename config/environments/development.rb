@@ -62,5 +62,7 @@ Rails.application.configure do
     authentication: 'plain', 
     enable_starttls_auto: true 
   }
+  config.action_mailer.asset_host = 'http://localhost:3000'
+
 
 end
