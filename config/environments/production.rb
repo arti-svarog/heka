@@ -99,8 +99,7 @@ Rails.application.configure do
     domain: 'gmail.com', 
     user_name: '09artirajora@gmail.com',
     password: 'artiyatin',
-    authentication: 'plain', 
-    enable_starttls_auto: true 
+    authentication: 'plain'
   }
 
   config.action_mailer.asset_host = 'https://heka-app.herokuapp.com'
