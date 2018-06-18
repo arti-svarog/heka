@@ -245,7 +245,7 @@
 
 		$(".form-group-change").hide();
 		$.ajax({
-	  url: "http://localhost:3000/home/currency_exchange",
+	  url: "/home/currency_exchange",
 	  type: "GET",
 	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
 	  dataType: "script",
@@ -267,7 +267,7 @@
 	var amount = $("#amount").val();
 	$(".form-group-change").hide();
 		$.ajax({
-	  url: "http://localhost:3000/home/currency_exchange",
+	  url: "/home/currency_exchange",
 	  type: "GET",
 	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
 	  dataType: "script",
@@ -287,7 +287,7 @@
 	var amount = $("#amount").val();
 	$(".form-group-change1").hide();
 		$.ajax({
-	  url: "http://localhost:3000/home/currency_exchange",
+	  url: "/home/currency_exchange",
 	  type: "GET",
 	  data: {"params" : {"first" :currency1,"second" :currency2 ,"quantity" :amount}},
 	  dataType: "script",

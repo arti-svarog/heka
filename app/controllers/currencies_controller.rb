@@ -6,7 +6,7 @@ class CurrenciesController < ApplicationController
 
 	def create
 		Currency.create(name: params[:currency][:name],abbr: params[:currency][:abbr],logo: params[:currency][:logo],rate: params[:currency][:rate])
-		redirect '#'
+		redirect root_url
 	end
 
 	def top_currencies
