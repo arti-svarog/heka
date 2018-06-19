@@ -1,4 +1,5 @@
 class CallbacksController < Devise::OmniauthCallbacksController
+	before_action :authenticate_user, :except => [:facebook,:github,:google_oauth2,:medium,:twitter]
 	
 	def github
 		# binding.pry
