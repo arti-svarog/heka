@@ -282,7 +282,7 @@ Devise.setup do |config|
   config.omniauth :github, "3fd74b4689236965fc2e", "1d0a9a7c84cc8be0ee5894dead34f11ebdd0b701",opts = { scope: 'user:email' }
   config.omniauth :google_oauth2, "108452168573-besu1se1v76m06s4fibvbooqhtefjtgi.apps.googleusercontent.com", "95bDbTBpx7O9Bn0Y7R9vl1Xx"
   
-  config.omniauth :medium, "9b8719c88c51", "4c44ae624ff03320e2402d6b8db35c1fd443f263", scope: 'basicProfile,listPublications'
+  #config.omniauth :medium, "9b8719c88c51", "4c44ae624ff03320e2402d6b8db35c1fd443f263"#, scope: 'basicProfile,listPublications'
 
   # config.omniauth :twitter, 'BE343y3VgkkNwkE3MWCRbeD0C','ETJCUUz8ESFBMlSTkhqpgGGm8W8jr2nlliNpi8hABKxG8KEPNy'
   # config.omniauth :medium, '', ''
